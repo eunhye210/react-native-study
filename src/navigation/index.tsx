@@ -5,45 +5,46 @@ import {
   StaticParamList,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Image } from 'react-native';
-import bell from '../assets/bell.png';
-import newspaper from '../assets/newspaper.png';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Feather from '@expo/vector-icons/Feather';
 import { Home } from './screens/Home';
 import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 import { Updates } from './screens/Updates';
 import { NotFound } from './screens/NotFound';
+import Home2 from './screens/Home2';
+import MovieDetail from './screens/MovieDetail';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
-    Home: {
+    Home1: {
       screen: Home,
       options: {
-        title: 'Feed',
+        title: 'Home1',
         tabBarIcon: ({ color, size }) => (
-          <Image
-            source={newspaper}
-            tintColor={color}
-            style={{
-              width: size,
-              height: size,
-            }}
-          />
+          <AntDesign name="book" size={size} color={color} />
         ),
+      },
+    },
+    Home2: {
+      screen: Home2,
+      options: {
+        title: 'Home2',
+        tabBarIcon: ({ color, size }) => (
+          <AntDesign name="setting" size={size} color={color} />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: 'NotoSansKR',
+          fontSize: 10,
+        },
       },
     },
     Updates: {
       screen: Updates,
       options: {
+        title: 'Updates',
         tabBarIcon: ({ color, size }) => (
-          <Image
-            source={bell}
-            tintColor={color}
-            style={{
-              width: size,
-              height: size,
-            }}
-          />
+          <Feather name="alert-triangle" size={size} color={color} />
         ),
       },
     },
@@ -57,6 +58,19 @@ const RootStack = createNativeStackNavigator({
       options: {
         title: 'Home',
         headerShown: false,
+      },
+    },
+    MovieDetail: {
+      screen: MovieDetail,
+      linking: {
+        path: 'movie/:id',
+        parse: {
+          id: (value) => parseInt(value, 10),
+        },
+      },
+      options: {
+        title: 'Movie Detail',
+        headerShown: true,
       },
     },
     Profile: {
