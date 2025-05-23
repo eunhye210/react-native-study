@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Animated } from "react-native";
-import { theme } from "src/constants/theme";
+import { theme } from "../constants";
 
 export default function Block({
   flex,

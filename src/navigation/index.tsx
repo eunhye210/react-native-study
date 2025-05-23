@@ -18,6 +18,15 @@ import User from "./screens/User";
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
+    User: {
+      screen: User,
+      options: {
+        title: "User",
+        tabBarIcon: ({ color, size }) => (
+          <Feather name="alert-triangle" size={size} color={color} />
+        ),
+      },
+    },
     Home1: {
       screen: Home,
       options: {
@@ -44,15 +53,6 @@ const HomeTabs = createBottomTabNavigator({
       screen: Updates,
       options: {
         title: "Updates",
-        tabBarIcon: ({ color, size }) => (
-          <Feather name="alert-triangle" size={size} color={color} />
-        ),
-      },
-    },
-    User: {
-      screen: User,
-      options: {
-        title: "User",
         tabBarIcon: ({ color, size }) => (
           <Feather name="alert-triangle" size={size} color={color} />
         ),

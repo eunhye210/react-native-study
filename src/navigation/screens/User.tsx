@@ -1,11 +1,15 @@
 import React from "react";
-import { View, Text } from "react-native";
+
+import Block from "../../components/Block";
+import Text from "../../components/Text";
 
 const User = () => {
   return (
-    <View>
-      <Text>User</Text>
-    </View>
+    <Block center middle>
+      <Text h1 bold color="red">
+        Three
+      </Text>
+    </Block>
   );
 };
 

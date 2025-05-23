@@ -50,4 +50,4 @@ const fonts = {
   },
 };
 
-export { colors, sizes, fonts };
+export default { colors, sizes, fonts };

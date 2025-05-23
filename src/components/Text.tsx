@@ -4,7 +4,7 @@ import {
   TextProps as RNTextProps,
   StyleSheet,
 } from "react-native";
-import { theme } from "src/constants/theme";
+import { theme } from "../constants";
 
 interface Props extends RNTextProps {
   h1?: boolean;
@@ -77,7 +77,7 @@ export default function Text({
     title && styles.title,
     body && styles.body,
     caption && styles.caption,
-    small && styles.small,
+    // small && styles.small,
     size && { fontSize: size },
     transform && { textTransform: transform },
     align && { textAlign: align },
@@ -135,5 +135,5 @@ const styles = StyleSheet.create({
   title: theme.fonts.title,
   body: theme.fonts.body,
   caption: theme.fonts.caption,
-  small: theme.fonts.small,
+  // small: theme.fonts.small,
 });
